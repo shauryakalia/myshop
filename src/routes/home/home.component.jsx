@@ -1,4 +1,4 @@
-import Menu from '../../../components/menu/menu.component';
+import Menu from '../../components/menu/menu.component';
 
 const Home = () => {
 
