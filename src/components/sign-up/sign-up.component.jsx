@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 
 import { createAuthUserWithEmailPass, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
 
@@ -18,14 +18,11 @@ const SignUpForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { displayName, email, password } = formFields;
 
-    const { currentUser, setCurrentUser } = useContext(UserContext);
-
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         try {
             const { user } = createAuthUserWithEmailPass(email, password);
-            setCurrentUser(user);
             await createUserDocumentFromAuth(user, {displayName});
             resetForm();
         } catch (error) {
