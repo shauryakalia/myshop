@@ -23,7 +23,7 @@ const SignUpForm = () => {
 
         try {
             const { user } = createAuthUserWithEmailPass(email, password);
-            await createUserDocumentFromAuth(user, {displayName});
+            createUserDocumentFromAuth(user, {displayName});
             resetForm();
         } catch (error) {
             if (error.code === 'auth/email=already-in-use') {

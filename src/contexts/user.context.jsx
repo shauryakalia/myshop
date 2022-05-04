@@ -16,7 +16,7 @@ export const UserProvider = ({children}) => {
         const unsubscribe = onAuthStateChangedListener((user) => {
             setCurrentUser(user);
             if (user) {
-                await createUserDocumentFromAuth(user);
+                createUserDocumentFromAuth(user);
             }
         });
 
