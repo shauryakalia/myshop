@@ -1,6 +1,6 @@
 import { Fragment, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
-import './navbar.styles.scss';
+import { NavbarContainer } from './navbar.styles.js';
 import { ReactComponent as Logo } from '../../logo.svg'
 import { UserContext } from "../../contexts/user.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <Fragment>
-      <div className="navbar">
+      <NavbarContainer>
         <Link className="logo-container" to="/">
           <Logo className="logo" />
         </Link>
@@ -34,7 +34,7 @@ const Navbar = () => {
           <CartIcon />
         </div>
         { isCartOpen && <CartDropdown />}
-      </div>
+      </NavbarContainer>
       <Outlet />
     </Fragment>
   );
