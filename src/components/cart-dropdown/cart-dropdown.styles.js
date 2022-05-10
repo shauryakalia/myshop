@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CartDropdown = styled.div`
+export const CartDropdownContainer = styled.div`
   position: absolute;
   width: 240px;
   height: 340px;
