@@ -10,7 +10,7 @@ import { selectCategories } from '../../store/categories/category.selector';
 
 const Category = () => {
     const { category } = useParams();
-    const { categories } = useSelector(selectCategories);
+    const categories = useSelector(selectCategories);
     const [products, setProducts] = useState(categories[category]);
 
     useEffect(() => {

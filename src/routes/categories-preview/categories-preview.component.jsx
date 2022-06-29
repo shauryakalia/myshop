@@ -8,7 +8,7 @@ import { selectCategories } from '../../store/categories/category.selector';
 
 
 const CategoriesPreview = () => {
-    const { categories } = useSelector(selectCategories);
+    const categories = useSelector(selectCategories);
     return (
         <>
             {categories && Object.keys(categories).map(title => {
