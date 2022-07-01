@@ -15,13 +15,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        {/* <UserProvider> */}
-          {/* <CategoriesProvider> */}
-            <CartProvider>
-              <App />
-            </CartProvider>
-          {/* </CategoriesProvider> */}
-        {/* </UserProvider> */}
+          <App />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,
