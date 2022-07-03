@@ -9,7 +9,7 @@ import {
     createUserDocumentFromAuth,
     signInUserWithEmailPass
 } from '../../utils/firebase/firebase.utils.js';
-import { UserContext } from "../../contexts/user.context";
+// import { UserContext } from "../../contexts/user.context";
 
 
 const defaultFormFields = {
