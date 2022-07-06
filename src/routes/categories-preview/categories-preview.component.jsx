@@ -4,19 +4,23 @@ import { useSelector } from "react-redux";
 
 import CategoryPreview from "../../components/category-preview/cateogry-preview.component";
 
-import { selectCategories } from '../../store/categories/category.selector';
+import { selectCategories, selectCategoriesIsLoading } from '../../store/categories/category.selector';
+import Loader from '../../components/loader/loader.component';
 
 
 const CategoriesPreview = () => {
     const categories = useSelector(selectCategories);
+    const isLoading = useSelector(selectCategoriesIsLoading);
     return (
         <>
-            {categories && Object.keys(categories).map(title => {
-                const products = categories[title];
-                return (
-                    <CategoryPreview key={title} title={title} products={products} />
-                )
-            })}
+            {   isLoading ? <Loader /> :
+                categories && Object.keys(categories).map(title => {
+                    const products = categories[title];
+                    return (
+                        <CategoryPreview key={title} title={title} products={products} />
+                    )
+                })
+            }
         </>
     )
 }
