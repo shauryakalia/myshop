@@ -1,6 +1,7 @@
 import { type } from "@testing-library/user-event/dist/type";
 import { createContext, useReducer } from "react";
 import {createAction} from '../utils/reducer/reducer.utils';
+// reducer pattern
 
 const addProductToCart = (cartItems, product) => {
     const item = cartItems.find((cartItem) => cartItem.id === product.id);
